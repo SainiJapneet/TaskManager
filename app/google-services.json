@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "732275975219",
+    "firebase_url": "https://grademanager084-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "grademanager084",
+    "storage_bucket": "grademanager084.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732275975219:android:3bc8e91383fbfdc169ef46",
+        "android_client_info": {
+          "package_name": "com.example.grademanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732275975219-1hl454193sfnii749noi92sn15ivf9rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMlTQdg7FHsgxFKtJDlHm62H6c8wyxijo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732275975219-1hl454193sfnii749noi92sn15ivf9rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732275975219:android:b4a6da7e444f7f5a69ef46",
+        "android_client_info": {
+          "package_name": "com.example.taskmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732275975219-1hl454193sfnii749noi92sn15ivf9rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMlTQdg7FHsgxFKtJDlHm62H6c8wyxijo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732275975219-1hl454193sfnii749noi92sn15ivf9rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
