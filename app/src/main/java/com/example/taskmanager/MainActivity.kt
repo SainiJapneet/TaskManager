@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     fun loadFrag(frag: Fragment){
         var myFrag = supportFragmentManager.beginTransaction()
-        myFrag.replace(com.google.android.material.R.id.container,frag)
+        myFrag.replace(R.id.FragContainer,frag)
         myFrag.commit()
     }
 }
