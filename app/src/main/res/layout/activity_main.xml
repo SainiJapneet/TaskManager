@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_color"
     tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/FragContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-    </FrameLayout>
+        android:layout_height="670dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavMenu"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavMenu"
