@@ -14,6 +14,9 @@ class ViewTaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_task)
+
+        getSupportActionBar()?.hide()
+
         txtTitleView = findViewById(R.id.txtTitleView)
         txtDateView = findViewById(R.id.txtDateView)
         txtTimeView = findViewById(R.id.txtTimeView)

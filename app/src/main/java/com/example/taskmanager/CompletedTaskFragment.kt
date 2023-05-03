@@ -1,17 +1,20 @@
 package com.example.taskmanager
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CompletedTaskFragment : Fragment() {
     lateinit var db: FirebaseFirestore
     lateinit var lstViewComplete: ListView
+    lateinit var sharedPreferences: SharedPreferences
     var arrList = ArrayList<Model>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +28,10 @@ class CompletedTaskFragment : Fragment() {
         var myFrag = inflater.inflate(R.layout.fragment_completed_task, container, false)
         db = FirebaseFirestore.getInstance()
         lstViewComplete = myFrag.findViewById(R.id.lstViewComplete)
+        sharedPreferences = requireContext().getSharedPreferences("Shared_Prefs", AppCompatActivity.MODE_PRIVATE)
+        val uName = sharedPreferences.getString("Cred_ID","")
 
-        db.collection("users")
+        db.collection("$uName")
             .get()
             .addOnSuccessListener { documents ->
                 arrList.clear()

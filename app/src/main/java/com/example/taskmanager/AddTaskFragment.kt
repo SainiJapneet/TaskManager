@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.DialogInterface
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 import java.util.Objects
@@ -20,6 +22,7 @@ import java.util.Objects
 class AddTaskFragment : Fragment() {
 
     lateinit var db: FirebaseFirestore
+    lateinit var sharedPreferences: SharedPreferences
 
     lateinit var edtTitle: EditText
     lateinit var edtDate: EditText
@@ -46,6 +49,9 @@ class AddTaskFragment : Fragment() {
         edtTask = myView.findViewById(R.id.edtTask)
         btnAddTask = myView.findViewById(R.id.btnAddTask)
         db = FirebaseFirestore.getInstance()
+
+        sharedPreferences = requireContext().getSharedPreferences("Shared_Prefs", AppCompatActivity.MODE_PRIVATE)
+        val uName = sharedPreferences.getString("Cred_ID","")
 
         edtDate.setOnClickListener {
             val cal = Calendar.getInstance()
@@ -100,7 +106,7 @@ class AddTaskFragment : Fragment() {
 
                     val task = Model("",title,date,time,taskT)
 
-                    db.collection("users").document(title).set(task)
+                    db.collection("$uName").document(title).set(task)
                         .addOnSuccessListener {
                             Toast.makeText(context,"Task Added Successfully",Toast.LENGTH_LONG).show()
                         }
