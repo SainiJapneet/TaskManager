@@ -1,5 +1,6 @@
 package com.example.taskmanager
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -45,7 +46,12 @@ class UpcomingTaskFragment : Fragment() {
             }
 
         lstViewUpcoming.setOnItemClickListener { parent, view, position, id ->
-
+            val intent = Intent(context,ViewTaskActivity::class.java)
+            intent.putExtra("title",arrList[position].title)
+            intent.putExtra("date",arrList[position].date)
+            intent.putExtra("time",arrList[position].time)
+            intent.putExtra("task",arrList[position].task)
+            startActivity(intent)
         }
         return myFrag
     }
